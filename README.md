@@ -24,6 +24,9 @@ CodebaseDocumentationCrew employs a team of AI agents, each specialized in diffe
 - Python 3.10+
 - CrewAI library
 - An LLM API key (e.g., OpenAI API key)
+- Python Poetry
+  
+***NOTE**:  If you don't use Python Poetry, drop pyproject.toml into an LLM and ask it to generate a requirements.txt file.  
 
 ### 🚀 Quick Start
 
@@ -34,19 +37,14 @@ CodebaseDocumentationCrew employs a team of AI agents, each specialized in diffe
 
 2. Install dependencies:
    ```
-   pip install -r requirements.txt
+   poetry install
    ```
 
-3. Set up your LLM API key as an environment variable.
+3. Copy example.env to .env and setup as appropriate.
 
 4. Run the documentation generator:
-   ```python
-   from codebase_documentation_crew import CodebaseDocumentationCrew
-   from langchain.llms import OpenAI
-
-   llm = OpenAI(temperature=0.3)
-   crew = CodebaseDocumentationCrew("/path/to/your/repo", llm)
-   result = crew.code_documentation_crew().kickoff()
+   ```
+   python src/run_code_documentation.py
    ```
 
 ### 📚 Output
@@ -64,23 +62,16 @@ The tool generates a comprehensive markdown file in the `output/` directory, con
 - Troubleshooting guide
 - Performance considerations
 
-### 🛠️ Customization
-
-You can customize the behavior of the AI agents by modifying their roles, goals, and backstories in the `create_agents()` method. Adjust task descriptions and expected outputs in the `create_tasks()` method to fine-tune the documentation process.
-
-### 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ### 📄 License
 
 This project is licensed under the MIT License
+
 ### 🙏 Acknowledgments
 
 - CrewAI framework
 - OpenAI for their powerful language models
 - Alejandro AO for his code to integrate with Streamlit
+- 
 ---
 
-Built with ❤️ by Scott Turnbull
-```
+Built with ❤️ for an easy life.
