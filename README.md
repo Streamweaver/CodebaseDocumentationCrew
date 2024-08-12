@@ -40,16 +40,32 @@ CodebaseDocumentationCrew employs a team of AI agents, each specialized in diffe
    poetry install
    ```
 
-3. Copy example.env to .env and setup as appropriate.
+#### Running as a command line app
 
-4. Run the documentation generator:
+1. Copy example.env to .env and setup as appropriate.
+
+2. Run the documentation generator at command line (note you will need a .env file):
    ```
-   python src/run_code_documentation.py
+   poetry run generate_documentation
    ```
+
+#### Running as a Streamlit App
+
+1. Run the Streamlit web app to generate documentation.  Note you do not need to config a .env file and all data is entered in the web interface.
+   ```
+   poetry run streamlit run src/documentation_crew/gui/app.py
+   ```
+
+2. To exit just ctrl+x, ctrl+c in the terminal
 
 ### 📚 Output
 
-The tool generates a comprehensive markdown file in the `output/` directory, containing:
+The tool generates a comprehensive markdown file in the `output/` directory of the project root.
+Filenames have a timestamp added and should not overwrite each other on multiple runs. If running through 
+the streamlit app you will see the output and additional agent chatter and it will write the output
+file as specified here.
+
+The AI crew tries to structure the document with at least the following information:
 
 - Project overview
 - Architecture details
@@ -68,10 +84,11 @@ This project is licensed under the MIT License
 
 ### 🙏 Acknowledgments
 
-- CrewAI framework
-- OpenAI for their powerful language models
-- Alejandro AO for his code to integrate with Streamlit
-- 
+- CrewAI, framework
+- OpenAI, for their powerful language models
+- Alejandro AO, for his code to integrate with Streamlit
+- Prince, for making some of the best music ever.
+
 ---
 
 Built with ❤️ for an easy life.

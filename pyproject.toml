@@ -1,10 +1,14 @@
 [tool.poetry]
-name = "codebasedocumentationcrew"
+name = "codbase_documentation_crew"
 version = "0.1.0"
 description = "Document a codebase using CrewAI."
 authors = ["Scott Turnbull <streamweaver@gmail.com>"]
 license = "Apache 2.0"
 readme = "README.md"
+packages = [
+    { include = "documentation_crew", from = "src" },
+    { include = "tools", from = "src" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<=3.13"
@@ -19,7 +23,8 @@ langchain-google-genai = "^1.0.8"
 pillow = "^10.4.0"
 
 [tool.poetry.scripts]
-documentation_crew = "documentation_crew.main:run_code_documentation"
+generate_documentation = "documentation_crew.main:run_code_documentation"
+streamlit_app = "documentation_crew.gui.app:main"
 
 [build-system]
 requires = ["poetry-core"]
