@@ -53,7 +53,7 @@ CodebaseDocumentationCrew employs a team of AI agents, each specialized in diffe
 
 1. Run the Streamlit web app to generate documentation.  Note you do not need to config a .env file and all data is entered in the web interface.
    ```
-   poetry run streamlit run src/documentation_crew/gui/app.py
+   poetry run streamlit_app
    ```
 
 2. To exit just ctrl+x, ctrl+c in the terminal

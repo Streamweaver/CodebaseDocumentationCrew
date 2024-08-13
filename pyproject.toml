@@ -24,7 +24,7 @@ pillow = "^10.4.0"
 
 [tool.poetry.scripts]
 generate_documentation = "documentation_crew.main:run_code_documentation"
-streamlit_app = "documentation_crew.gui.app:main"
+streamlit_app = "run_streamlit_app:main"
 
 [build-system]
 requires = ["poetry-core"]
